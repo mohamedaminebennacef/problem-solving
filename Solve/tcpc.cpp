@@ -9,46 +9,25 @@ using namespace std;
 using ll = long long;
 #define endl "\n"
 
-bool multi = false;
+bool multi = true;
 
-void solve(int tc)
+void solve(ll tc)
 {
-    string s;
-    cin >> s;
-    int k;
-    cin >> k;
-    if (k >= count(all(s), '1'))
+    ll n, k, d = 0, ans = 0;
+    cin >> n >> k;
+    vector<ll> a(n);
+    for (ll i = 0; i < n; i++)
+        cin >> a[i];
+    vector<pair<ll, ll>> a2 = {{1, 0}, {a[0], 0}};
+    for (ll i = 1; i < n; i++)
     {
-        cout << 1e18 << endl;
-        return;
+        if (a[i - 1] >= a[i])
+            d++;
+        a2.pb({a[i], d});
     }
-    if (k == 0)
-    {
-        if (s[0] == '1')
-        {
-            cout << 10 << endl;
-            return;
-        }
-    }
-    for (int i = 0; i < s.length() - 1; i++)
-    {
-        if (s[i] == s[i + 1] && s[i] == '1')
-            k--;
-    }
-    vector<int> seq0;
-    int cnt = 0;
-    for (int i = 0; i < s.length(); i++)
-    {
-        if (s[i] == '0')
-            cnt++;
-        else
-        {
-            seq0.pb(cnt);
-            cnt = 0;
-        }
-    }
-    sort(all(seq0));
-    cout << (seq0[k] + 1) * 10 << endl;
+    for (ll i = 0; i < n - k; i++)
+        ans = max(ans, a2[i + k + 1].F + a2[i + k + 1].S * 24 - (a2[i].F + a2[i].S * 24));
+    cout << ans << endl;
 }
 
 signed main()
@@ -60,7 +39,7 @@ signed main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    int t = 1;
+    ll t = 1;
     if (multi)
         cin >> t;
     while (t--)

@@ -1,3 +1,0 @@
-B  Lecture Sleep data structures dp implementation two pointers         *1200 
-B. Subsequence Hate implementation strings 				                *1400
-A. Immobile Knight  implementation 					                    *800
