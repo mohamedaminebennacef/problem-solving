@@ -1,9 +1,9 @@
 test.cpp
-Solve/main.cpp
-Solve/main.out
-Solve/output.txt
-Solve/main
-Solve/input.txt
-Solve/answer.txt
-test.cpp
-test
+solve/main.cpp
+solve/main
+solve/test
+solve/input.txt
+solve/output.txt
+solve/answer.txt
+solve/test.cpp
+solve/main.cpp
