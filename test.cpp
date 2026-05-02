@@ -1,12 +1,10 @@
-#include <bits/stdc++.h>
-#define F first
-#define S second
-#define all(a) a.begin(), a.end()
+#include <iostream>
 using namespace std;
-using ll = long long;
 
 int main() {
-    for (int i = 1;i <= 8; i++)
-        cout << i << " " << (i * (i - 1)) / 2 << endl;
+    cout << "hey" << endl;
+    cout << "hey" << endl;
+    cout << "hey" << endl;
+    cout << "hey" << endl;
     return 0;
 }
